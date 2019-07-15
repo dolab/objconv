@@ -11,28 +11,29 @@ import (
 var respDecodeTests = []struct {
 	v interface{}
 	s string
+	t objconv.Type
 }{
-	{nil, "$-1\r\n"},
-	{nil, "*-1\r\n"},
+	{nil, "$-1\r\n", objconv.Nil},
+	{nil, "*-1\r\n", objconv.Nil},
 
-	{0, ":0\r\n"},
-	{-1, ":-1\r\n"},
-	{42, ":42\r\n"},
+	{0, ":0\r\n", objconv.Int},
+	{-1, ":-1\r\n", objconv.Int},
+	{42, ":42\r\n", objconv.Int},
 
-	{"", "+\r\n"},
-	{"Hello World!", "+Hello World!\r\n"},
-	{"Hello\nWorld!", "+Hello\nWorld!\r\n"},
-	{"Hello\r\nWorld!", "$13\r\nHello\r\nWorld!\r\n"},
+	{"", "+\r\n", objconv.String},
+	{"Hello World!", "+Hello World!\r\n", objconv.String},
+	{"Hello\nWorld!", "+Hello\nWorld!\r\n", objconv.String},
+	{"Hello\r\nWorld!", "$13\r\nHello\r\nWorld!\r\n", objconv.Bytes},
 
-	{[]byte{}, "$0\r\n\r\n"},
-	{[]byte("Hello World!"), "$12\r\nHello World!\r\n"},
+	{[]byte{}, "$0\r\n\r\n", objconv.Bytes},
+	{[]byte("Hello World!"), "$12\r\nHello World!\r\n", objconv.Bytes},
 
-	{NewError(""), "-\r\n"},
-	{NewError("oops"), "-oops\r\n"},
-	{NewError("ERR A"), "-ERR A\r\n"},
+	{NewError(""), "-\r\n", objconv.Error},
+	{NewError("oops"), "-oops\r\n", objconv.Error},
+	{NewError("ERR A"), "-ERR A\r\n", objconv.Error},
 
-	{[]int{}, "*0\r\n"},
-	{[]int{1, 2, 3}, "*3\r\n:1\r\n:2\r\n:3\r\n"},
+	{[]int{}, "*0\r\n", objconv.Array},
+	{[]int{1, 2, 3}, "*3\r\n:1\r\n:2\r\n:3\r\n", objconv.Array},
 }
 
 func TestUnmarshal(t *testing.T) {
