@@ -4,7 +4,7 @@ import (
 	"net"
 	"reflect"
 
-	"github.com/segmentio/objconv"
+	"github.com/dolab/objconv"
 )
 
 func init() {

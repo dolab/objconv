@@ -3,7 +3,7 @@ package yaml
 import (
 	"testing"
 
-	"github.com/segmentio/objconv/objtests"
+	"github.com/dolab/objconv/objtests"
 )
 
 func TestCodec(t *testing.T) {

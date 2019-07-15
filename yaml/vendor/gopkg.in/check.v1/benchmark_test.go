@@ -4,6 +4,7 @@ package check_test
 
 import (
 	"time"
+
 	. "gopkg.in/check.v1"
 )
 

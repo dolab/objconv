@@ -5,7 +5,7 @@ import (
 	"io"
 	"sync"
 
-	"github.com/segmentio/objconv"
+	"github.com/dolab/objconv"
 )
 
 // NewEncoder returns a new MessagePack encoder that writes to w.

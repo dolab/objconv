@@ -10,7 +10,7 @@ import (
 
 	yaml "gopkg.in/yaml.v2"
 
-	"github.com/segmentio/objconv"
+	"github.com/dolab/objconv"
 )
 
 type Parser struct {

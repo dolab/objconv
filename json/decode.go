@@ -5,7 +5,7 @@ import (
 	"io"
 	"sync"
 
-	"github.com/segmentio/objconv"
+	"github.com/dolab/objconv"
 )
 
 // NewDecoder returns a new JSON decoder that parses values from r.

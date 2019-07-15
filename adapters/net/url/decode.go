@@ -5,7 +5,7 @@ import (
 	"net/url"
 	"reflect"
 
-	"github.com/segmentio/objconv"
+	"github.com/dolab/objconv"
 )
 
 func decodeURL(d objconv.Decoder, to reflect.Value) (err error) {

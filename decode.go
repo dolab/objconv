@@ -9,7 +9,7 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/segmentio/objconv/objutil"
+	"github.com/dolab/objconv/objutil"
 )
 
 // A Decoder implements the algorithms for building data structures from their

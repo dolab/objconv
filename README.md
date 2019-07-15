@@ -1,4 +1,4 @@
-objconv [![CircleCI](https://circleci.com/gh/segmentio/objconv.svg?style=shield)](https://circleci.com/gh/segmentio/objconv) [![Go Report Card](https://goreportcard.com/badge/github.com/segmentio/objconv)](https://goreportcard.com/report/github.com/segmentio/objconv) [![GoDoc](https://godoc.org/github.com/segmentio/objconv?status.svg)](https://godoc.org/github.com/segmentio/objconv)
+objconv [![CircleCI](https://circleci.com/gh/dolab/objconv.svg?style=shield)](https://circleci.com/gh/dolab/objconv) [![Go Report Card](https://goreportcard.com/badge/github.com/dolab/objconv)](https://goreportcard.com/report/github.com/dolab/objconv) [![GoDoc](https://godoc.org/github.com/dolab/objconv?status.svg)](https://godoc.org/github.com/dolab/objconv)
 =======
 
 This Go package provides the implementation of high performance encoder and
@@ -8,7 +8,7 @@ The top-level package exposes the generic types and algorithms for encoding and
 decoding values, while each sub-package implements the parser and emitters for
 specific types.
 
-### Breaking changes introduced in [#18](https://github.com/segmentio/objconv/pull/18)
+### Breaking changes introduced in [#18](https://github.com/dolab/objconv/pull/18)
 
 The `Encoder` type used to have methods exposed to encode specific types for
 optimization purposes. The generic `Encode` method has been optimized to make
@@ -43,7 +43,7 @@ package main
 import (
     "os"
 
-    "github.com/segmentio/objconv/json"
+    "github.com/dolab/objconv/json"
 )
 
 func main() {
@@ -70,7 +70,7 @@ import (
     "fmt"
     "os"
 
-    "github.com/segmentio/objconv/json"
+    "github.com/dolab/objconv/json"
 )
 
 func main() {
@@ -105,7 +105,7 @@ package main
 import (
     "io"
 
-    "github.com/segmentio/objconv/json"
+    "github.com/dolab/objconv/json"
 )
 
 func main() {
@@ -183,8 +183,8 @@ it registers itself on the global registry to be later referred by name.
 import (
     "bytes"
 
-    "github.com/segmentio/objconv"
-    _ "github.com/segmentio/objconv/json" // registers the JSON codec
+    "github.com/dolab/objconv"
+    _ "github.com/dolab/objconv/json" // registers the JSON codec
 )
 
 func main() {

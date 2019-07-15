@@ -15,9 +15,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/segmentio/objconv"
-	_ "github.com/segmentio/objconv/adapters"
-	"github.com/segmentio/objconv/objutil"
+	"github.com/dolab/objconv"
+	_ "github.com/dolab/objconv/adapters"
+	"github.com/dolab/objconv/objutil"
 )
 
 // TestValues is an array of all the values used by the TestCodec suite.

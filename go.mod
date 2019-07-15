@@ -1,3 +1,5 @@
-module github.com/segmentio/objconv
+module github.com/dolab/objconv
 
-require gopkg.in/yaml.v2 v2.2.1
+go 1.12
+
+require gopkg.in/yaml.v2 v2.2.2

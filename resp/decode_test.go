@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/segmentio/objconv"
+	"github.com/dolab/objconv"
 )
 
 var respDecodeTests = []struct {

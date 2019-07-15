@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: /go/src/github.com/segmentio/objconv
+    working_directory: /go/src/github.com/dolab/objconv
     docker:
       - image: circleci/golang
     steps:

@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/segmentio/objconv"
+	"github.com/dolab/objconv"
 )
 
 func decodeTCPAddr(d objconv.Decoder, to reflect.Value) (err error) {

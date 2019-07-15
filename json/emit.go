@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/segmentio/objconv"
-	"github.com/segmentio/objconv/objutil"
+	"github.com/dolab/objconv"
+	"github.com/dolab/objconv/objutil"
 )
 
 var (

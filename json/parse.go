@@ -12,8 +12,8 @@ import (
 	"unicode/utf8"
 	"unsafe"
 
-	"github.com/segmentio/objconv"
-	"github.com/segmentio/objconv/objutil"
+	"github.com/dolab/objconv"
+	"github.com/dolab/objconv/objutil"
 )
 
 type Parser struct {

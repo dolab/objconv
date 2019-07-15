@@ -3,7 +3,7 @@ package cbor
 import (
 	"encoding/binary"
 
-	"github.com/segmentio/objconv/objutil"
+	"github.com/dolab/objconv/objutil"
 )
 
 const ( // major types

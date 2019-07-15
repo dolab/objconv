@@ -4,7 +4,7 @@ import (
 	"net/url"
 	"reflect"
 
-	"github.com/segmentio/objconv"
+	"github.com/dolab/objconv"
 )
 
 func encodeURL(e objconv.Encoder, v reflect.Value) error {

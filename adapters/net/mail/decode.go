@@ -5,7 +5,7 @@ import (
 	"net/mail"
 	"reflect"
 
-	"github.com/segmentio/objconv"
+	"github.com/dolab/objconv"
 )
 
 func decodeAddress(d objconv.Decoder, to reflect.Value) (err error) {

@@ -6,7 +6,7 @@
 package adapters
 
 import (
-	_ "github.com/segmentio/objconv/adapters/net"
-	_ "github.com/segmentio/objconv/adapters/net/mail"
-	_ "github.com/segmentio/objconv/adapters/net/url"
+	_ "github.com/dolab/objconv/adapters/net"
+	_ "github.com/dolab/objconv/adapters/net/mail"
+	_ "github.com/dolab/objconv/adapters/net/url"
 )

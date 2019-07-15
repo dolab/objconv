@@ -8,7 +8,7 @@ import (
 	"math"
 	"time"
 
-	"github.com/segmentio/objconv"
+	"github.com/dolab/objconv"
 )
 
 type Parser struct {

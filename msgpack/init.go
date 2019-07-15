@@ -3,7 +3,7 @@ package msgpack
 import (
 	"io"
 
-	"github.com/segmentio/objconv"
+	"github.com/dolab/objconv"
 )
 
 // Codec for the MessagePack format.

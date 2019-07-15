@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"sync"
 
-	"github.com/segmentio/objconv/objutil"
+	"github.com/dolab/objconv/objutil"
 )
 
 // structField represents a single field of a struct and carries information

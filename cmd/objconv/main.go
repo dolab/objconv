@@ -10,12 +10,12 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/segmentio/objconv"
-	_ "github.com/segmentio/objconv/cbor"
-	_ "github.com/segmentio/objconv/json"
-	_ "github.com/segmentio/objconv/msgpack"
-	_ "github.com/segmentio/objconv/resp"
-	_ "github.com/segmentio/objconv/yaml"
+	"github.com/dolab/objconv"
+	_ "github.com/dolab/objconv/cbor"
+	_ "github.com/dolab/objconv/json"
+	_ "github.com/dolab/objconv/msgpack"
+	_ "github.com/dolab/objconv/resp"
+	_ "github.com/dolab/objconv/yaml"
 )
 
 // document is used to preserve the order of keys in maps.

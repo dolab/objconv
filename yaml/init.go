@@ -3,7 +3,7 @@ package yaml
 import (
 	"io"
 
-	"github.com/segmentio/objconv"
+	"github.com/dolab/objconv"
 )
 
 // Codec for the YAML format.

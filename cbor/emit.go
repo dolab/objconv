@@ -7,7 +7,7 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/segmentio/objconv/objutil"
+	"github.com/dolab/objconv/objutil"
 )
 
 // Emitter implements a MessagePack emitter that satisfies the objconv.Emitter

@@ -3,7 +3,7 @@ package json
 import (
 	"io"
 
-	"github.com/segmentio/objconv"
+	"github.com/dolab/objconv"
 )
 
 // Codec for the JSON format.
