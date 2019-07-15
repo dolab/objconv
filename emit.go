@@ -62,7 +62,7 @@ type Emitter interface {
 }
 
 // The PrettyEmitter interface may be implemented by emitters supporting a more
-// human-friendlly format.
+// human-friendly format.
 type PrettyEmitter interface {
 	// PrettyEmitter returns a new emitter that outputs to the same writer in a
 	// pretty format.
