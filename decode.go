@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"reflect"
 	"strconv"
-	"sync"
 	"time"
 	"unsafe"
 
@@ -1271,14 +1270,10 @@ type StreamDecoder struct {
 	// there is not destination type (when decoding to an empty interface).
 	MapType reflect.Type
 
-	// value of root
-	rootType Type
-
-	err  error
-	typ  Type
-	cnt  int
-	max  int
-	once sync.Once
+	err error
+	typ Type
+	cnt int
+	max int
 }
 
 // NewStreamDecoder returns a new stream decoder that takes input from p.
@@ -1295,7 +1290,7 @@ func NewStreamDecoder(p Parser) *StreamDecoder {
 func (d *StreamDecoder) RootType() Type {
 	d.Len()
 
-	return d.rootType
+	return d.typ
 }
 
 // Len returns the number of values remaining to be read from the stream, which
@@ -1376,6 +1371,17 @@ func (d *StreamDecoder) Decode(v interface{}) error {
 	return err
 }
 
+// Next reset *StreamDecoder if the error of previous parsed is End.
+//
+// NOTE: It used by pipeline scenes, such as RESP protocol.
+func (d *StreamDecoder) Next() error {
+	if d.err != End {
+		return d.err
+	}
+
+	return d.init()
+}
+
 // Encoder returns a new StreamEncoder which can be used to re-encode the stream
 // decoded by d into e.
 //
@@ -1392,26 +1398,24 @@ func (d *StreamDecoder) Encoder(e Emitter) (enc *StreamEncoder, err error) {
 }
 
 func (d *StreamDecoder) init() (err error) {
-	d.once.Do(func() {
-		err = error(nil)
-		typ := Unknown
-		max := 0
+	err = error(nil)
+	typ := Unknown
+	max := 0
 
-		typ, err = d.Parser.ParseType()
-		if err == nil {
-			switch typ {
-			default:
-				max = 1
-			case Array:
-				max, err = d.Parser.ParseArrayBegin()
-			}
+	typ, err = d.Parser.ParseType()
+	if err == nil {
+		switch typ {
+		default:
+			max = 1
+		case Array:
+			max, err = d.Parser.ParseArrayBegin()
 		}
+	}
 
-		d.rootType = typ
-		d.err = err
-		d.typ = typ
-		d.max = max
-	})
+	d.err = err
+	d.typ = typ
+	d.cnt = 0
+	d.max = max
 
 	return err
 }

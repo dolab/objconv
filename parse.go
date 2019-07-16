@@ -1,12 +1,17 @@
 package objconv
 
-import "time"
+import (
+	"io"
+	"time"
+)
 
 // The Parser interface must be implemented by types that provide decoding of a
 // specific format (like json, resp, ...).
 //
 // Parsers are not expected to be safe for use by multiple goroutines.
 type Parser interface {
+	Buffered() io.Reader
+
 	// ParseType is called by a decoder to ask the parser what is the type of
 	// the next value that can be parsed.
 	//
