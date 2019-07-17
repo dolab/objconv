@@ -1,8 +1,10 @@
 package objconv
 
 import (
+	"bytes"
 	"encoding"
 	"errors"
+	"io"
 	"reflect"
 	"sync"
 	"time"
@@ -157,6 +159,10 @@ func NewValueParser(v interface{}) *ValueParser {
 	return &ValueParser{
 		stack: []reflect.Value{reflect.ValueOf(v)},
 	}
+}
+
+func (p *ValueParser) Buffered() io.Reader {
+	return bytes.NewReader(nil)
 }
 
 func (p *ValueParser) ParseType() (Type, error) {
